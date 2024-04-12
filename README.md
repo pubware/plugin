@@ -1,0 +1,2 @@
+# plugin
+🔌 Extendable Plugin class
