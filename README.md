@@ -4,7 +4,7 @@
 
 The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for creating plugins that integrate directly with [packpub](https://github.com/packpub/packpub).
 
-Plugins can be created for a wide range of functionalities. From publishing `npm` packages and interacting with `git` repositories to integrating with services like Slack, Discord, or even DoorDash.
+Plugins can be created for a wide range of functionalities. From publishing `npm` packages and interacting with `git` repositories to integrating with services like Slack, Discord, or even DoorDash. View the [API](#api) for more information.
 
 ### 🔥 Features
 
@@ -13,7 +13,7 @@ Plugins can be created for a wide range of functionalities. From publishing `npm
 - 💻 Shell Execution
 - 🌐 HTTP Requests
 - 💬 Logging
-- 🪝 Lifecycle Hooks
+- 🔄 Lifecycle Hooks
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Plugins can be created for a wide range of functionalities. From publishing `npm
 
 Install the `@packpub/plugin` package.
 
-```
+```bash
 npm install @packpub/plugin
 ```
 
@@ -68,33 +68,45 @@ Any of the methods can be `async`.
 
 ## API
 
-| Method                                                                         | Description                                       |
-| ------------------------------------------------------------------------------ | ------------------------------------------------- |
-| **log(message: string)**                                                       | Log a message.                                    |
-| **prompt(message: string, defaultValue: string = '')**                         | Prompt the user for input.                        |
-| **promptConfirm(message: string, defaultValue: boolean = false)**              | Prompt the user for a boolean confirmation.       |
-| **promptSelect(message: string, choices: Choices, defaultValue: string = '')** | Prompt the user to select from a list of choices. |
-| **read(path: string)**                                                         | Read the content of a file.                       |
-| **write(path: string, content: string)**                                       | Write content to a file.                          |
-| **exec(cmd: string, options: ExecOptions = { write: true })**                  | Execute a shell command.                          |
-| **fetch<T>(url: string, options: RequestInit = {})**                           | Fetch a resource over HTTP.                       |
+| Method                                                                    | Description                                       |
+| ------------------------------------------------------------------------- | ------------------------------------------------- |
+| **log(message: string)**                                                  | Log a message.                                    |
+| **prompt(message: string, defaultValue: string)**                         | Prompt the user for input.                        |
+| **promptConfirm(message: string, defaultValue: boolean)**                 | Prompt the user for a boolean confirmation.       |
+| **promptSelect(message: string, choices: Choices, defaultValue: string)** | Prompt the user to select from a list of choices. |
+| **read(path: string)**                                                    | Read the content of a file.                       |
+| **write(path: string, content: string)**                                  | Write content to a file.                          |
+| **exec(cmd: string, options: ExecOptions)**                               | Execute a shell command.                          |
+| **fetch<T>(url: string, options: RequestInit)**                           | Fetch a resource over HTTP.                       |
+
+## Configuration
+
+Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration object is passed directly to the class constructor.
+
+```json
+{
+  "plugin": {
+    "key": "value"
+  }
+}
+```
 
 ## Flags
 
-The `Plugin` class supports the use of CLI flags. These flags can be set to modify the execution of various utility methods and lifecycle hooks. The following flags are available:
+Plugins support CLI flags that can modify the execution of various utility methods and lifecycle hooks. The following flags are available:
 
-| Flag         | Description                                                                                                                                                                    |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **dry**      | When set to `true`, the plugin runs in dry mode and no write operations will be performed.                                                                                     |
-| **headless** | When set to `true`, the plugin runs in headless mode and user prompts will return default values instead of waiting for input and write-based shell execution will be ignored. |
+| Flag         | Description                                                                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **dry**      | When set to `true`, the plugin runs in dry mode and no write operations will be performed.                                                  |
+| **headless** | When set to `true`, the plugin runs in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!NOTE]
-> Flags are only to be set by packpub internally. You can check against a `flag` value if you need custom functionality.
+> Flags are passed and set from the packpub CLI.
 
 ## Examples
 
-- [npm](https://github.com/packpub/npm)
-- [git](https://github.com/packpub/git)
+- [@packpub/npm](https://github.com/packpub/npm)
+- [@packpub/git](https://github.com/packpub/git)
 
 ## License
 
