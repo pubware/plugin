@@ -79,11 +79,11 @@ Implement hooks to control the plugin's lifecycle.
 | publish()     | Called to handle the publishing process.     |
 | postPublish() | Called after the package has been published. |
 
-Any of the methods can be `async`.
+Any of the hooks can be `async`.
 
 ## Configuration
 
-Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration is passed to the class constructor.
+Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration is passed to the plugin.
 
 ```json
 {
@@ -95,12 +95,12 @@ Plugins support configuration with a `packpub.json` file or `package.json`. When
 
 ## Flags
 
-Plugins support flags that can modify the execution of various utility methods and lifecycle hooks:
+Plugins support flags that modify the execution of various utility methods and lifecycle hooks:
 
-| Flag         | Description                                                                                                                                 |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **dry**      | When set to `true`, the plugin runs in dry mode and no write operations will be performed.                                                  |
-| **headless** | When set to `true`, the plugin runs in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
+| Flag         | Description                                                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **dry**      | When set to `true`, run in dry mode and no write operations will be performed.                                                  |
+| **headless** | When set to `true`, run in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!IMPORTANT]
 > Flags are set from the packpub CLI
