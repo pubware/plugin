@@ -53,29 +53,33 @@ class YourPlugin extends Plugin {
 export default YourPlugin
 ```
 
-Implement the following hooks to control the plugin's lifecycle:
-
-- `init`: Called when the plugin is initialized.
-- `preBump`: Called before the version is bumped.
-- `bump`: Called to handle the version bump.
-- `prePublish`: Called before the package is published.
-- `publish`: Called to handle the publishing process.
-- `postPublish`: Called after the package has been published.
-
-Any of the methods can be `async`.
-
 ## API
 
-| Method                                                                    | Description                                       |
-| ------------------------------------------------------------------------- | ------------------------------------------------- |
-| **log(message: string)**                                                  | Log a message.                                    |
-| **prompt(message: string, defaultValue: string)**                         | Prompt the user for input.                        |
-| **promptConfirm(message: string, defaultValue: boolean)**                 | Prompt the user for a boolean confirmation.       |
-| **promptSelect(message: string, choices: Choices, defaultValue: string)** | Prompt the user to select from a list of choices. |
-| **read(path: string)**                                                    | Read the content of a file.                       |
-| **write(path: string, content: string)**                                  | Write content to a file.                          |
-| **exec(cmd: string, options: ExecOptions)**                               | Execute a shell command.                          |
-| **fetch<T>(url: string, options: RequestInit)**                           | Fetch a resource over HTTP.                       |
+| Method                                                                | Description                                       |
+| --------------------------------------------------------------------- | ------------------------------------------------- |
+| log(message: string)                                                  | Log a message.                                    |
+| prompt(message: string, defaultValue: string)                         | Prompt the user for input.                        |
+| promptConfirm(message: string, defaultValue: boolean)                 | Prompt the user for a boolean confirmation.       |
+| promptSelect(message: string, choices: Choices, defaultValue: string) | Prompt the user to select from a list of choices. |
+| read(path: string)                                                    | Read the content of a file.                       |
+| write(path: string, content: string)                                  | Write content to a file.                          |
+| exec(cmd: string, options: ExecOptions)                               | Execute a shell command.                          |
+| fetch<T>(url: string, options: RequestInit)                           | Fetch a resource over HTTP.                       |
+
+### Lifecycle Hooks
+
+Implement hooks to control the plugin's lifecycle.
+
+| Method        | Description                                  |
+| ------------- | -------------------------------------------- |
+| init()        | Called when the plugin is initialized.       |
+| preBump()     | Called before the version is bumped.         |
+| bump()        | Called to handle the version bump.           |
+| prePublish()  | Called before the package is published.      |
+| publish()     | Called to handle the publishing process.     |
+| postPublish() | Called after the package has been published. |
+
+Any of the methods can be `async`.
 
 ## Configuration
 
