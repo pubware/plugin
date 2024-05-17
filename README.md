@@ -1,8 +1,6 @@
 # 🔌 plugin
 
-The abstract `Plugin` class for creating plugins.
-
-From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be created for a wide range of functionalities. The `Plugin` class provides a variety of utility methods and lifecycle hooks that integrate directly with [packpub](https://github.com/packpub/packpub).
+The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for creating plugins. From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be created for a wide range of functionalities.
 
 ### 🔥 Features
 
@@ -13,7 +11,7 @@ From publishing `npm` packages, pushing changes to `git` repositories, to integr
 - 📝 Console Logging
 - 🔄 Lifecycle Hooks
 
-View the [API](#api) for more information.
+Learn more about the [API](#api).
 
 ## Requirements
 
@@ -100,7 +98,7 @@ Plugins support flags that can modify the execution of various utility methods a
 | **dry**      | When set to `true`, the plugin runs in dry mode and no write operations will be performed.                                                  |
 | **headless** | When set to `true`, the plugin runs in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
-> [!NOTE]
+> [!IMPORTANT]
 > Flags are set from the packpub CLI
 
 ## Examples
