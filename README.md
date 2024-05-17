@@ -1,19 +1,19 @@
 # 🔌 plugin
 
-## Overview
+The abstract `Plugin` class for creating plugins.
 
-The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for creating plugins that integrate directly with [packpub](https://github.com/packpub/packpub).
-
-Plugins can be created for a wide range of functionalities. From publishing `npm` packages and interacting with `git` repositories to integrating with services like Slack, Discord, or even DoorDash. View the [API](#api) for more information.
+From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be created for a wide range of functionalities. The `Plugin` class provides a variety of utility methods and lifecycle hooks that integrate directly with [packpub](https://github.com/packpub/packpub).
 
 ### 🔥 Features
 
 - 🙋‍♀️ User Prompts
-- 📂 File System Operations
+- 📂 File Operations
 - 💻 Shell Execution
 - 🌐 HTTP Requests
-- 💬 Logging
+- 📝 Console Logging
 - 🔄 Lifecycle Hooks
+
+View the [API](#api) for more information.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Plugins can be created for a wide range of functionalities. From publishing `npm
 
 ## Install
 
-Install the `@packpub/plugin` package.
+Install the `@packpub/plugin` package:
 
 ```bash
 npm install @packpub/plugin
@@ -29,7 +29,7 @@ npm install @packpub/plugin
 
 ## Usage
 
-Import the `Plugin` and create a subclass.
+Import the `Plugin` and create a subclass:
 
 ```js
 import Plugin from '@packpub/plugin'
@@ -81,7 +81,7 @@ Any of the methods can be `async`.
 
 ## Configuration
 
-Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration object is passed directly to the class constructor.
+Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration is passed to the class constructor.
 
 ```json
 {
@@ -93,7 +93,7 @@ Plugins support configuration with a `packpub.json` file or `package.json`. When
 
 ## Flags
 
-Plugins support CLI flags that can modify the execution of various utility methods and lifecycle hooks. The following flags are available:
+Plugins support flags that can modify the execution of various utility methods and lifecycle hooks:
 
 | Flag         | Description                                                                                                                                 |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,7 +101,7 @@ Plugins support CLI flags that can modify the execution of various utility metho
 | **headless** | When set to `true`, the plugin runs in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!NOTE]
-> Flags are passed and set from the packpub CLI.
+> Flags are set from the packpub CLI
 
 ## Examples
 
