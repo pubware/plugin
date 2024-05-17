@@ -1,0 +1,43 @@
+{
+  "name": "@packpub/plugin",
+  "version": "0.0.0",
+  "description": "Abstract plugin",
+  "author": "William Grosset (https://williamgrosset.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/packpub/plugin"
+  },
+  "keywords": [
+    "package",
+    "publisher",
+    "release",
+    "cli",
+    "abstract",
+    "plugin"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.25",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^4.3.2"
+  }
+}
