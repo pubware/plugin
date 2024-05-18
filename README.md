@@ -57,31 +57,31 @@ export default YourPlugin
 
 ### Utility Methods
 
-Utilize inherited functionality from the parent class.
+Leverage utility methods to perform various operations.
 
-| Method                                                                                 | Description                                       |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| log(message: string)                                                                   | Log a message.                                    |
-| prompt(message: string, defaultValue: string): Promise<string>                         | Prompt the user for input.                        |
-| promptConfirm(message: string, defaultValue: boolean): Promise<boolean>                | Prompt the user for a boolean confirmation.       |
-| promptSelect(message: string, choices: Choices, defaultValue: string): Promise<string> | Prompt the user to select from a list of choices. |
-| read(path: string): Promise<string>                                                    | Read the content of a file.                       |
-| write(path: string, content: string): Promise<void>                                    | Write content to a file.                          |
-| exec(cmd: string, options: ExecOptions): Promise<void>                                 | Execute a shell command.                          |
-| fetch<T>(url: string, options: RequestInit): Promise<T>                                | Fetch a resource over HTTP.                       |
+| Method                                                                                   | Description                                       |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `log(message: string)`                                                                   | Log a message.                                    |
+| `prompt(message: string, defaultValue: string): Promise<string>`                         | Prompt the user for input.                        |
+| `promptConfirm(message: string, defaultValue: boolean): Promise<boolean>`                | Prompt the user for a boolean confirmation.       |
+| `promptSelect(message: string, choices: Choices, defaultValue: string): Promise<string>` | Prompt the user to select from a list of choices. |
+| `read(path: string): Promise<string>`                                                    | Read the content of a file.                       |
+| `write(path: string, content: string): Promise<void>`                                    | Write content to a file.                          |
+| `exec(cmd: string, options: ExecOptions): Promise<void>`                                 | Execute a shell command.                          |
+| `fetch<T>(url: string, options: RequestInit): Promise<T>`                                | Fetch a resource over HTTP.                       |
 
 ### Lifecycle Hooks
 
 Implement hooks to integrate with packpub's lifecycle.
 
-| Hook          | Description                                  |
-| ------------- | -------------------------------------------- |
-| init()        | Called when the plugin is initialized.       |
-| preBump()     | Called before the version is bumped.         |
-| bump()        | Called to handle the version bump.           |
-| prePublish()  | Called before the package is published.      |
-| publish()     | Called to handle the publishing process.     |
-| postPublish() | Called after the package has been published. |
+| Hook            | Description                                  |
+| --------------- | -------------------------------------------- |
+| `init()`        | Called when the plugin is initialized.       |
+| `preBump()`     | Called before the version is bumped.         |
+| `bump()`        | Called to handle the version bump.           |
+| `prePublish()`  | Called before the package is published.      |
+| `publish()`     | Called to handle the publishing process.     |
+| `postPublish()` | Called after the package has been published. |
 
 Any hook can be `async`.
 
@@ -101,10 +101,10 @@ Plugins support configuration with a `packpub.json` file or `package.json`. When
 
 Plugins support flags that modify the execution of various utility methods and lifecycle hooks:
 
-| Flag         | Description                                                                                                                     |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| **dry**      | When set to `true`, run in dry mode and no write operations will be performed.                                                  |
-| **headless** | When set to `true`, run in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
+| Flag       | Description                                                                                                                     |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `dry`      | When set to `true`, run in dry mode and no write operations will be performed.                                                  |
+| `headless` | When set to `true`, run in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!IMPORTANT]
 > Flags are set from the packpub CLI
