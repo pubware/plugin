@@ -59,16 +59,16 @@ export default YourPlugin
 
 Utilize inherited functionality from the parent class.
 
-| Method                                                                      | Description                                       |
-| --------------------------------------------------------------------------- | ------------------------------------------------- |
-| log(message: string)                                                        | Log a message.                                    |
-| async prompt(message: string, defaultValue: string)                         | Prompt the user for input.                        |
-| async promptConfirm(message: string, defaultValue: boolean)                 | Prompt the user for a boolean confirmation.       |
-| async promptSelect(message: string, choices: Choices, defaultValue: string) | Prompt the user to select from a list of choices. |
-| async read(path: string)                                                    | Read the content of a file.                       |
-| async write(path: string, content: string)                                  | Write content to a file.                          |
-| async exec(cmd: string, options: ExecOptions)                               | Execute a shell command.                          |
-| async fetch<T>(url: string, options: RequestInit)                           | Fetch a resource over HTTP.                       |
+| Method                                                                                 | Description                                       |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| log(message: string)                                                                   | Log a message.                                    |
+| prompt(message: string, defaultValue: string): Promise<string>                         | Prompt the user for input.                        |
+| promptConfirm(message: string, defaultValue: boolean): Promise<boolean>                | Prompt the user for a boolean confirmation.       |
+| promptSelect(message: string, choices: Choices, defaultValue: string): Promise<string> | Prompt the user to select from a list of choices. |
+| read(path: string): Promise<string>                                                    | Read the content of a file.                       |
+| write(path: string, content: string): Promise<void>                                    | Write content to a file.                          |
+| exec(cmd: string, options: ExecOptions): Promise<void>                                 | Execute a shell command.                          |
+| fetch<T>(url: string, options: RequestInit): Promise<T>                                | Fetch a resource over HTTP.                       |
 
 ### Lifecycle Hooks
 
