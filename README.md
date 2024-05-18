@@ -55,22 +55,26 @@ export default YourPlugin
 
 ## API
 
-| Method                                                                | Description                                       |
-| --------------------------------------------------------------------- | ------------------------------------------------- |
-| log(message: string)                                                  | Log a message.                                    |
-| prompt(message: string, defaultValue: string)                         | Prompt the user for input.                        |
-| promptConfirm(message: string, defaultValue: boolean)                 | Prompt the user for a boolean confirmation.       |
-| promptSelect(message: string, choices: Choices, defaultValue: string) | Prompt the user to select from a list of choices. |
-| read(path: string)                                                    | Read the content of a file.                       |
-| write(path: string, content: string)                                  | Write content to a file.                          |
-| exec(cmd: string, options: ExecOptions)                               | Execute a shell command.                          |
-| fetch<T>(url: string, options: RequestInit)                           | Fetch a resource over HTTP.                       |
+### Utility Methods
+
+Utilize inherited functionality from the parent class.
+
+| Method                                                                      | Description                                       |
+| --------------------------------------------------------------------------- | ------------------------------------------------- |
+| log(message: string)                                                        | Log a message.                                    |
+| async prompt(message: string, defaultValue: string)                         | Prompt the user for input.                        |
+| async promptConfirm(message: string, defaultValue: boolean)                 | Prompt the user for a boolean confirmation.       |
+| async promptSelect(message: string, choices: Choices, defaultValue: string) | Prompt the user to select from a list of choices. |
+| async read(path: string)                                                    | Read the content of a file.                       |
+| async write(path: string, content: string)                                  | Write content to a file.                          |
+| async exec(cmd: string, options: ExecOptions)                               | Execute a shell command.                          |
+| async fetch<T>(url: string, options: RequestInit)                           | Fetch a resource over HTTP.                       |
 
 ### Lifecycle Hooks
 
-Implement hooks to control the plugin's lifecycle.
+Implement hooks to integrate with packpub's lifecycle.
 
-| Method        | Description                                  |
+| Hook          | Description                                  |
 | ------------- | -------------------------------------------- |
 | init()        | Called when the plugin is initialized.       |
 | preBump()     | Called before the version is bumped.         |
@@ -79,7 +83,7 @@ Implement hooks to control the plugin's lifecycle.
 | publish()     | Called to handle the publishing process.     |
 | postPublish() | Called after the package has been published. |
 
-Any of the hooks can be `async`.
+Any hook can be `async`.
 
 ## Configuration
 
