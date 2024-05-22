@@ -19,10 +19,10 @@ Learn more about the [API](#api).
 
 ## Install
 
-Install the `@packpub/plugin` package:
+Install the `@pubware/plugin` package:
 
 ```bash
-npm install @packpub/plugin
+npm install @pubware/plugin
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ npm install @packpub/plugin
 Import the `Plugin` and create a subclass:
 
 ```js
-import Plugin from '@packpub/plugin'
+import Plugin from '@pubware/plugin'
 
 class YourPlugin extends Plugin {
   constructor() {
@@ -72,7 +72,7 @@ Leverage utility methods to perform various operations.
 
 ### Lifecycle Hooks
 
-Implement hooks to integrate with packpub's lifecycle.
+Implement hooks to integrate with pubware's lifecycle.
 
 | Hook            | Description                                  |
 | --------------- | -------------------------------------------- |
@@ -87,7 +87,7 @@ Any hook can be `async`.
 
 ## Configuration
 
-Plugins support configuration with a `packpub.json` file or `package.json`. When an instance is created, the configuration is passed to the plugin.
+Plugins support configuration with a `pubware.json` file or `package.json`. When an instance is created, the configuration is passed to the plugin.
 
 ```json
 {
@@ -107,12 +107,12 @@ Plugins support flags that modify the execution of various utility methods and l
 | `headless` | When set to `true`, run in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!IMPORTANT]
-> Flags are set from the packpub CLI
+> Flags are set from the pubware CLI
 
 ## Examples
 
-- [@packpub/npm](https://github.com/packpub/npm)
-- [@packpub/git](https://github.com/packpub/git)
+- [@pubware/npm](https://github.com/pubware/npm)
+- [@pubware/git](https://github.com/pubware/git)
 
 ## License
 
