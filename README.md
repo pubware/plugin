@@ -1,6 +1,6 @@
 # 🔌 plugin
 
-The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for creating plugins. From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be created for a wide range of functionalities.
+The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for integrating with [pubware](https://github.com/pubware/pubware). From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be used for a wide range of functionalities.
 
 ### 🔥 Features
 
@@ -72,7 +72,7 @@ Leverage utility methods to perform various operations.
 
 ### Lifecycle Hooks
 
-Implement hooks to integrate with pubware's lifecycle.
+Implement hooks to integrate with the lifecycle.
 
 | Hook            | Description                                  |
 | --------------- | -------------------------------------------- |
@@ -87,7 +87,7 @@ Any hook can be `async`.
 
 ## Configuration
 
-Plugins support configuration with a `pubware.json` file or `package.json`. When an instance is created, the configuration is passed to the plugin.
+Plugins support configuration with a `pubware.json` file or within `package.json`. When an instance is created, the key-value pairs are passed to the plugin.
 
 ```json
 {
@@ -101,10 +101,10 @@ Plugins support configuration with a `pubware.json` file or `package.json`. When
 
 Plugins support flags that modify the execution of various utility methods and lifecycle hooks:
 
-| Flag       | Description                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `dry`      | When set to `true`, run in dry mode and no write operations will be performed.                                                  |
-| `headless` | When set to `true`, run in headless mode and user prompts will return defaults and write-based shell execution will be ignored. |
+| Flag       | Description                                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------ |
+| `dry`      | When set to `true`, no write operations will be performed.                                             |
+| `headless` | When set to `true`, user prompts will return defaults and write-based shell execution will be ignored. |
 
 > [!IMPORTANT]
 > Flags are set from the pubware CLI
