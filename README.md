@@ -1,5 +1,10 @@
 # 🔌 plugin
 
+<div>
+  <img src="https://img.shields.io/github/actions/workflow/status/pubware/plugin/ci.yml" alt="Build status" />
+  <img src="https://img.shields.io/npm/v/@pubware/plugin" alt="NPM version" />
+</div>
+
 The abstract `Plugin` class provides a variety of utility methods and lifecycle hooks for integrating with [pubware](https://github.com/pubware/pubware). From publishing `npm` packages, pushing changes to `git` repositories, to integrating with services like GitHub, Slack, or DoorDash, plugins can be used for a wide range of functionalities.
 
 ### 🔥 Features
